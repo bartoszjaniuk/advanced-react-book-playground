@@ -1,0 +1,9 @@
+# Key takeaways
+
+- Re-rendering jest to sposób w jaki React aktualizuje dane do komponentów. Bez re-renderów, aplikacja nie byłaby interaktywana.
+- Aktualizacja stanu (state) jest początkowym źródłem wszystkich re-renderów.
+  Czyli, jeśli jest wywołany re-render w komponencie, to wszystkie zagniezdzone w nim komponenty, równiez się przeładują.
+- Możemy użyć wzorca znanego jako „moving state down” lub "composition", aby zapobiec niepotrzebnym ponownym renderowaniu w dużych aplikacjach.
+- Aktualizacja stanu w hooku spowoduje ponowne renderowanie komponentu korzystającego z tego hooka, nawet jeśli sam stan nie jest używany.
+- W przypadku hooków korzystających z innych hooków każda aktualizacja stanu w tym łańcuchu hooków spowoduje ponowne renderowanie komponentu korzystającego z pierwszego hooka.
+  (Czyli tak jak w przypadku komponentów)
