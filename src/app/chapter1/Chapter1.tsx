@@ -42,7 +42,10 @@ export const Chapter1 = () => {
 	return (
 		<>
 			<CodeBlock code={PROBLEM_1} />
-			<InfoNote text="Aktualny problem polega na tym ze kazda zmiana stanu spowoduje przeładowanie wszystkich komponentów, nawet tych, które tego stanu nie uzywają." />
+			<InfoNote
+				variant="warning"
+				text="Aktualny problem polega na tym ze kazda zmiana stanu spowoduje przeładowanie wszystkich komponentów, nawet tych, które tego stanu nie uzywają."
+			/>
 			<InfoNote text="Rowziązanie: izolacja. Czyli, wyniesienie stanu w dół do komponentów, które go faktycznie uzywają. " />
 			<SeparatedState />
 			<CodeBlock code={SOLUTION_1} />
