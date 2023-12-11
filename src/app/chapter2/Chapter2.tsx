@@ -48,6 +48,10 @@ export const Solution1 = () => {
 export const Chapter2 = () => {
 	return (
 		<>
+			<InfoNote
+				variant="info"
+				text="Chapter 2. Elements, children as props, and re-renders"
+			/>
 			<CodeBlock code={PROBLEM_1} />
 			<InfoNote
 				variant="warning"

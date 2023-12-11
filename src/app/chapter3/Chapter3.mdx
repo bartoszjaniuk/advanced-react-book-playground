@@ -1,0 +1,14 @@
+# NOTES
+
+- Kiedy komponent renderuje kolejny komponent, konfigurację, która jest kontrolowane za pomocą propsów mozna zastąpić przekazaniem całego elementu jako prop, zostawiając konfigurację dla consumer'a.
+
+- Jeśli komponent, którego elementy są renderowane za pomocą warunków, nie będą renderowane dopóki ich warunek nie zostanie spełniony, nawet jeśli są zadeklarowane.
+
+  ```tsx const App = () => {
+  // footer will be rendered only when the dialog itself renders // after isDialogOpen is set to "true"
+    const footer = <Footer />;
+    return isDialogOpen ? ( <ModalDialog footer={footer} />) : null;
+    };
+  ```
+
+- Jeśli istnieje potrzeba zeby dostarczyc domyślne propsy do elementu, które jest przekazywany jako props, jest to mozliwe za pomocą funkcji cloneElement.

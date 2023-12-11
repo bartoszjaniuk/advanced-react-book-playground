@@ -41,6 +41,7 @@ export const SeparatedState = () => {
 export const Chapter1 = () => {
 	return (
 		<>
+			<InfoNote variant="info" text="Chapter 1. Intro to re-renders" />
 			<CodeBlock code={PROBLEM_1} />
 			<InfoNote
 				variant="warning"
