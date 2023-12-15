@@ -1,14 +1,6 @@
+import { IconProps } from "../../shared/models/iconProps.types";
+import { getSize } from "../../shared/utils/getSize";
 import { Button } from "./Button";
-
-type IconProps = {
-	color?: string;
-	size?: "large" | "medium" | "small";
-};
-const getSize = (size: "large" | "medium" | "small" | undefined) => {
-	if (!size) return "1rem";
-	if (size === "large") return "2rem";
-	if (size === "medium") return "1.5rem";
-};
 
 const BrocoliIcon = ({ color, size }: IconProps) => {
 	const fontSize = getSize(size);
