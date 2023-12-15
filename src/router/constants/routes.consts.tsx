@@ -4,6 +4,7 @@ import { Chapter1 } from "../../app/chapter1/Chapter1";
 import { Chapter2 } from "../../app/chapter2/Chapter2";
 import { Chapter3 } from "../../app/chapter3/Chapter3";
 import { Chapter4 } from "../../app/chapter4/Chapter4";
+import { Chapter5 } from "../../app/chapter5/Chapter5";
 
 export const router = createBrowserRouter([
 	{
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
 			{ path: "/chapter-2", element: <Chapter2 /> },
 			{ path: "/chapter-3", element: <Chapter3 /> },
 			{ path: "/chapter-4", element: <Chapter4 /> },
-			{ path: "/chapter-5", element: <Chapter1 /> },
+			{ path: "/chapter-5", element: <Chapter5 /> },
 			{ path: "/chapter-6", element: <Chapter1 /> },
 			{ path: "/chapter-7", element: <Chapter1 /> },
 			{ path: "/chapter-8", element: <Chapter1 /> },

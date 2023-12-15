@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react";
-
 const getVariant = (variant: "success" | "warning" | "info") => {
 	if (variant === "warning") return "bg-orange-500";
 	if (variant === "info") return "bg-blue-500";
