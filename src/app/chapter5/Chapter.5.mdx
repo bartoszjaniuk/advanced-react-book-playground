@@ -1,0 +1,17 @@
+# NOTES
+
+- Interaktywność, oraz samo działanie reacta polega na re-renderach w celu aktualizacji stanu aplikacji.
+- React porównuje aktualne wartości "primitive values" którymi są np. number czy string,
+  a wartości non primitives typu object/array/function poprzez ich referencje.
+- Porównywanie wartości odbywa się "dependency array" hooków, oraz propsów komponentów wrapowanych przez React.memo
+- funkcje liniowe przekazywane jako elementy do useMemo oraz useCallback będę tworzone na nowo przy kazdym re-renderze
+- useCallback memoizuje samą funkcję, z kolei, useMemo wartość którą zwraca funkcja.
+
+- memoizacja propsów, ma sens tylko wtedy gdy:
+
+  - komponent jest owrapowany przez React.memo (przerwanie przeładowania całego trzeba komponentów potomnych),
+  - komponent korzysta z tych poropsow jako dependencies w hooku,
+  - komponent drilluje propsy w dół do komponentów, które są w takiej samej sytuacji jak dwa powyzsze podpunkty
+
+- children jest non primitive value i tez powoduje re-render, trzeba o tym pamietac
+- memoizacja nie jest łatwa, warto korzystać z kompozycji w celu optymalizacji kodu.
