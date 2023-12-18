@@ -1,0 +1,9 @@
+# NOTES
+
+- React będzie porównywał elementy między re-renderami z juz istniejacym elementami w drzewie DOM.
+- Jeśli porównywany element będzie znajdował się w tym samym miejscu, zostanie wykonany tylko re-render,
+  w przeciwynym wypadku, React wykona unmount poprzedniego komponentu i zrobi mount nowego.
+- Tablica childrenów zawsze będzie posiadała taką samą liczbę dzieci, jeśli jest statyczna.
+- Jeśli tablica jest dynamiczna, React nie może niezawodnie zidentyfikować tych elementów między ponownymi renderami. Więc używamy atrybutu "key", aby mu pomóc. Jest to ważne, gdy tablica może zmienić liczbę swoich elementów lub ich pozycję między ponownymi renderami (re-order, add, remove) i szczególnie ważne, jeśli te elementy są owrapowane przez React.memo
+- Możemy również użyć "key" do zewnętrznych tablic dynamicznych, aby zmusić Reacta do rozpoznawania elementów w tej samej pozycji w tablicy o tym samym typie, co inny. Lub zmusić go do rozpoznawania elementów w różnych pozycjach o tym samym typie co ten sam.
+- Możemy również wymusić un-mount komponentu za pomocą "key", jeśli ten "key" zmieni się między ponownymi renderami w oparciu o pewne informacje (takie jak routing). Jest to czasami nazywane „resetem stanu”.
