@@ -1,0 +1,8 @@
+# NOTES
+
+- Za pomocą contextu, lub jakiejkolwiek biblioteki do zarządzania stanem, jest mozliwe w łatwy sposób uzywanie stanu z dowolnego miejsca/zagniezdzenia w aplikacji. W ten sposb mozna pozbyc sie duzego props drillingu
+- Przekazywanie danych w ten sposób moze zwiekszyc performance aplikacji, dzieki unikaniu niepotrzebnych przerenderowań
+- Context moze poprawic performance, jak rowniez go pogorszyc. Trzeba go uzywac z glowa oraz znac jego wady oraz zalety, ktorymi sa czeste re-rendery.
+- W celu zminimalizowania przerenderowań nalezy zawsze memoizować dane, które są przekazywane do providera,
+- Jedną z technik optymalizacji contextu, jest rozdzielenie go na mniejsze części (separacja stanu oraz akcji). useReducer moze znaczaco ulatwic to zadanie.
+- Pomimo tego ze context nie posiada selektorów, jest mozliwe nasladowanie ich funkcjonalności za pomocą HOC i React.memo.
