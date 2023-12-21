@@ -1,0 +1,8 @@
+# NOTES
+
+- Ref to zmienny obiekt, który może przechowywać dowolną wartość. Ta wartość zostanie zachowana między ponownymi renderami
+- Aktualizacja Ref nie wyzwala ponownego renderowania i jest synchroniczna
+- Ref pozwala dostać się do dowolnego elementu drzewa DOM, działa jak document.getElementById('foo')
+- Po wyrenderowaniu tego elementu zobaczymy ten element we właściwości ref.current
+- Możemy przekazać Refy jako zwykłe propsy do dowolnego komponentu, albo pod inną nazwą lub jaki ref(forwardRef - trzeba owrapować komponent, bo jest to zarezerwowana nazwa)
+- Możemy ukryć szczegóły implementacji komponentu i ujawnić jego publiczny interfejs API za pomocą hooka useImperativeHandle. Będziemy musieli przekazać Ref do tego komponentu, który zostanie zmutowany z właściwościami
