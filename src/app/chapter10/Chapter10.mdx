@@ -1,0 +1,21 @@
+# NOTES
+
+- Clousres powstają za każdym razem, gdy funkcja jest tworzona wewnątrz innej funkcji
+- Ponieważ komponenty Reactowe są funkcjami, każda funkcja utworzona wewnątrz tworzy clousure, jak równiez hooki jak useCallback i useRef, useEffect, useMemo
+- Gdy funkcja tworząca clousure jest wywoływana, wszystkie dane wokół niej są „zamrożone”, niczym migawka.
+- Clousure jest to inaczej lokalny scope.
+- Aby zaktualizować dane, wewnątrz "zamkniętej" clousure, nalezy uzyć ją utworzyć ponownie, tak jak robi to useCallback
+- Jeśli "dependency" zostanie przegapione lub nie odświeżymy zamkniętej funkcji przypisanej do ref.current, zamknięcie stanie się "stale"
+- Możemy uciec przed pułapką "unfresh stale" w Reakcie, wykorzystując fakt, że Ref jest zmiennym obiektem. Możemy zmutować ref.current poza nieświeżym zamknięciem, a następnie uzyskać do niego dostęp do środka.
+
+```jsx
+const ref = useRef(null);
+useEffect(() => {
+	ref.current = () => {
+		console.log(value);
+	};
+});
+const onClick = useCallback(() => {
+	ref.current?.();
+}, []);
+```
