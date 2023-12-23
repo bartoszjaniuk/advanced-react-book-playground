@@ -1,0 +1,11 @@
+# NOTES
+
+- debouncing przy uzyciu ref = 🤯
+- Debouce jest uzywane aby zapobiec zbyt częstym wykonywaniu funkcji, zamiast tego wyzwala je po określonym czasie, od ostatniego wyzwolenia funkcji.
+- Throttle jest uzywane aby zapobiec egzekucji wielu funkcji, jedna po drógiej, zamiast tego wyzwala je cyklicznie w stałym odstępie czasu
+- Aby te funkcje działały prawidłowo, powinny być wywoływane tylko raz w życiu komponentu,
+  zwykle po jego zamontowaniu. (w przeciwnym razie efektem będzie zwykłe opóźnienie, oraz tworzenei wielu funkcji z nowym timerem...)
+- Jeśli wywołamy je bezpośrednio w funkcji renderowania komponentu, timer wewnątrz zostanie ponownie utworzony przy każdym ponownym renderowaniu,
+  a funkcje nie będą działać zgodnie z oczekiwaniami.
+- Aby naprawić to niechciane zachowanie, mozna uzyc useMemo lub useRef,
+- Aby uciec przed "clousure trap", możemy wykorzystać zmienny charakter obiektu Ref i uzyskać dostęp do najnowszych danych poprzez ciągłą aktualizację funkcji "zamkniętej" w ref.current w ramach useEffect..

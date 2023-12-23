@@ -13,7 +13,7 @@ export const Example4 = () => {
 		ref.current = () => {
 			console.log(value);
 		};
-	});
+	}, [value]);
 
 	const onClick = useCallback(() => {
 		ref.current?.();
