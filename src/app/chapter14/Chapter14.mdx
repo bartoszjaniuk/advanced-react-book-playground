@@ -1,0 +1,9 @@
+# NOTES
+
+- Możemy podzielić pobieranie danych klienta na dwie szerokie kategorie: początkowe(initial) i na żądanie(on demand).
+- Możemy korzstać z prostego fetch'a do pobierania zamiast korzystania z zewn. bibliotek, ale wiele obaw musielibyśmy zaimplementować ręcznie.
+- "wydajność" aplikacji jest często subiektywna i zależy od przekazu, który staramy się przekazać użytkownikom. (szybkość otwierania strony, szybkość ładowania danych), wymogi są rózne
+- Podczas pobierania danych, zwłaszcza początkowo, musimy być świadomi ograniczeń przeglądarki w przypadku żądań równoległych (max 6 requestów na raz).
+- Fetch waterfall'e pojawiają się, gdy uruchamiamy pobieranie danych nie równolegle, ale warunkowo lub w sekwencji.
+- Możemy użyć technik takich jak Promise.all, równoległe promisy lub Context Provider, aby uniknąć waterfall'i.
+- Możemy wstępnie pobrać krytyczne zasoby nawet przed zainicjowaniem Reacta, ale musimy pamiętać o ograniczeniach przeglądarki, robiąc to.
