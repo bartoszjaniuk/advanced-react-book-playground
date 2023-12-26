@@ -14,6 +14,7 @@ export enum ChapterRoutes {
 	CHAPTER9 = "/chapter-9",
 	CHAPTER10 = "/chapter-10",
 	CHAPTER11 = "/chapter-11",
+	CHAPTER12 = "/chapter-12",
 }
 
 export const AppRoutes = { ...Routes, ...ChapterRoutes };

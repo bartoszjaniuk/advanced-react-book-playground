@@ -11,6 +11,7 @@ import { Chapter8 } from "../../app/chapter8/Chapter8";
 import { Chapter9 } from "../../app/chapter9/Chapter9";
 import { Chapter10 } from "../../app/chapter10/Chapter10";
 import { Chapter11 } from "../../app/chapter11/Chapter11";
+import { Chapter12 } from "../../app/chapter12/Chapter12";
 
 export const router = createBrowserRouter([
 	{
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
 			{ path: "/chapter-9", element: <Chapter9 /> },
 			{ path: "/chapter-10", element: <Chapter10 /> },
 			{ path: "/chapter-11", element: <Chapter11 /> },
+			{ path: "/chapter-12", element: <Chapter12 /> },
 		],
 	},
 ]);
