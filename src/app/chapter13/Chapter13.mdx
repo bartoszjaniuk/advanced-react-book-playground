@@ -1,0 +1,19 @@
+# NOTES
+
+## POSITION ABSOLUTE
+
+- pozycjonowanie elementu relatywnie względem pozycjonowanego rodzica
+- elementy wewątrz będą przycięte, jesli overflow jest ustawione na hidden
+
+## POSITION: FIXED
+
+- pozycjonowanie elementu relatywnie względem viewport, chyba że zostanie utworzony nowy blok zawierający.
+- elementy mogą uciec od overflow hidden, ale nie od nowego Stacku Contextu (nałozonych elementów zawierających (position i zIndex))
+
+## PORTALE
+
+- Stacking Context jest tworzony przez ustawienie position, z-index, oraz translate.
+- Portale umożliwiają łatwe renderowanie niektórych elementów, takich jak modale, poza ich aktualną pozycją DOM, aby stacking context ich nie uwięził.
+- Podczas korzystania z Portali zasady są następujące:
+  - To, co dzieje się w Reakcie, pozostaje w hierarchii Reacta.
+  - To, co dzieje się poza Reactem, jest zgodne z zasadami struktury DOM.
