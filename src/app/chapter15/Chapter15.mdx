@@ -1,0 +1,8 @@
+# NOTES
+
+- Race condition może się zdarzyć, gdy aktualizujemy stan wiele razy po rozwiązaniu promisy w tym samym komponencie React. (re-render)
+- Mozna to naprawic na klika sposobow:
+  - Wymuszenie re-mountowania komponentu
+  - Porównując zwrócony wynik z zmienną, która uruchomiła promise oraz nie aktualizować stanu jeśli zmienna się rozni od poprzedniej.
+  - Za pomocą clean-up fn (najbardziej mi się ten sposób podoba)
+  - Za pomocą Abort Controller'a

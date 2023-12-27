@@ -1,8 +1,5 @@
 # NOTES
 
-- When we calculate the dimensions of elements inside the useEffect hook and then hide them or adjust their size, we
-  might see the visual "glitch".
-
 - Podczas wykonywania kalkulacji wymiarów elementów wewnątrz hook'a useEffect w celu wyświetlenia/schowania lub dostosowania rozmiaru, mozna zobaczyc na ekaranie glitcha
 - Dzieje się tak, ponieważ normalnie useEffect jest uruchamiany asynchronicznie. Kod asynchroniczny jest osobnym zadaniem z perspektywy przeglądarki. Ma więc szansę namalować stan „przed” i „po” zmianie, co skutkuje glitchem.
 - Możemy zapobiec temu zachowaniu za pomocą hook'a useLayoutEffect. Ten hook jest uruchamiany synchronicznie. Z perspektywy przeglądarki będzie to jedno duże, niezniszczalne zadanie. Tak więc przeglądarka będzie czekać i nie będzie niczego malować, dopóki zadanie nie zostanie zakończone i ostateczne wymiary nie zostaną obliczone.
