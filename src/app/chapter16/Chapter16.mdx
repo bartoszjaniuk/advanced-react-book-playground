@@ -1,0 +1,19 @@
+# NOTES
+
+- Brak obsługi błędów w wersji Reacta > 16 będzie odmontowywał całą aplikację, dlatego wazne jest aby uzyc ErrorBoundary.
+- Zwyczajne try/catch złapie tylko errory w callbackach oraz promisach, ale nie złapie errorów wewnątrz komponentów lub samej metodzie render.
+- ErrorBoundary jest wrapperem, który ma za zadanie złapać wszystkie rzucone błędy. (Skipuje callbacki oraz promisy)
+- Jest sposób aby obsłuzyc bledy z callbackow oraz promisow w ErrorBoundary.
+- Jest to mozliwe jesli, złapiemy błędy asynchroniczne za pomocą try/catch i ponownie wrzucimy je do normalnego cyklu życia React.
+
+```jsx
+// Przykład wrappera do rzucania błędów
+const useThrowAsyncError = () => {
+	const [_, setState] = useState(null);
+
+	return (error: any) =>
+		setState(() => {
+			throw error;
+		});
+};
+```
